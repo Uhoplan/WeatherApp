@@ -9,7 +9,7 @@ const degreeSection = document.querySelector('.degree-section');
 const degreeSpan = document.querySelector('.degree-section span');
 
 async function geoFindMe () {
-const requestURL = 'http://free.ipwhois.io/json/';
+const requestURL = 'https://free.ipwhois.io/json/';
 let response = await fetch(requestURL);
 let coords = await response.json();
 let long = JSON.stringify(`${coords.longitude}`);
@@ -51,8 +51,6 @@ fetch(api, {
    })
    //set srtIcons
    setIcons(icon, document.querySelector('.icon'));
-
-
  });
 
 function setIcons(icon, iconID) {
@@ -62,7 +60,4 @@ function setIcons(icon, iconID) {
   return skycons.set(iconID, Skycons[currentIcon]);
 
 }
-
-
-
 };

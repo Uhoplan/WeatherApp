@@ -1,7 +1,7 @@
 window.addEventListener("load", geoFindMe());
 
-// const findUser = document.querySelector('.current-cords');
-// findUser.addEventListener('click', geoFindMe);
+const findUser = document.querySelector('.current-cords');
+findUser.addEventListener('click', geoFindMe);
 const temperatureDescription = document.querySelector('.temperature-description');
 const temperatureDegree = document.querySelector('.temperature-degree');
 const locationTimezone = document.querySelector('.location-timezone');
@@ -9,7 +9,7 @@ const degreeSection = document.querySelector('.degree-section');
 const degreeSpan = document.querySelector('.degree-section span');
 
 async function geoFindMe () {
-const requestURL = 'https://free.ipwhois.io/json/';
+const requestURL = 'https://json.geoiplookup.io/';
 let response = await fetch(requestURL);
 let coords = await response.json();
 let long = JSON.stringify(`${coords.longitude}`);
